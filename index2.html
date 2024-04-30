@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анимация фона с линиями и сменой цветов как радуга</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)),
+                linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+    background-size: 40px 40px;
+    animation: animateBackground 10s linear infinite, rotateBackground 20s linear infinite, circleBackground 15s linear infinite, rainbowLines 7s linear infinite;
+  }
+
+  @keyframes animateBackground {
+    0%, 100% {
+      background-size: 40px 40px;
+    }
+    50% {
+      background-size: 60px 40px;
+    }
+  }
+
+  @keyframes rotateBackground {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes circleBackground {
+    0%, 100% {
+      background-position: 0 0, 20px 20px;
+    }
+    25% {
+      background-position: 40px 0, 60px 20px;
+    }
+    50% {
+      background-position: 40px 40px, 60px 60px;
+    }
+    75% {
+      background-position: 0 40px, 20px 60px;
+    }
+  }
+
+  @keyframes rainbowLines {
+    0%, 100% {
+      border-color: #ff0000; /* Red */
+    }
+    14% {
+      border-color: #ff7f00; /* Orange */
+    }
+    28% {
+      border-color: #ffff00; /* Yellow */
+    }
+    42% {
+      border-color: #00ff00; /* Green */
+    }
+    57% {
+      border-color: #0000ff; /* Blue */
+    }
+    71% {
+      border-color: #4b0082; /* Indigo */
+    }
+    85% {
+      border-color: #8a2be2; /* Violet */
+    }
+    100% {
+      border-color: #ff0000; /* Red */
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="grid-container">
+    <!-- Create grid items here (100 in total) -->
+    <!-- For demonstration purposes, let's manually create a 10x10 grid -->
+    <!-- Repeat the following line for a total of 100 grid items -->
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <!-- Add your lines or remove these lines based on your design -->
+    <!-- Repeat the above line for a total of 100 grid items -->
+  </div>
+</body>
+</html>

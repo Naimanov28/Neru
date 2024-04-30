@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="title">потом добавим к тайтлу нашего сайта</title>
+<style>
+  #title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div id="title">Your Title Here</div>
+
+<script>
+  const titleElement = document.getElementById('title');
+  const titleText = titleElement.innerText;
+  let currentIndex = 0;
+
+  function animateTitle() {
+    titleElement.innerText = titleText.substring(0, currentIndex + 1);
+
+    currentIndex++;
+    if (currentIndex > titleText.length) {
+      currentIndex = 0;
+    }
+
+    setTimeout(animateTitle, 200); 
+  }
+
+  animateTitle();
+</script>
+</body>
+</html>
